@@ -86,7 +86,7 @@ async function viewRandomPage(browser, page) {
       await page.goto(baseUrl + watch, {
         "waitUntil": "networkidle0"
       }); //https://github.com/puppeteer/puppeteer/blob/master/docs/api.md#pagegobackoptions
-
+      await page.waitFor(5000);
       await clickWhenExist(page, cookiePolicyQuery);
       await clickWhenExist(page, matureContentQuery); //Click on accept button
 
